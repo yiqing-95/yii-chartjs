@@ -35,7 +35,8 @@ class ChartJs extends CApplicationComponent
             return $this->_assetsUrl;
         else
         {
-            $assetsPath = Yii::getPathOfAlias('chartjs.assets');
+            //$assetsPath = Yii::getPathOfAlias('chartjs.assets');
+            $assetsPath = dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR .'assets';
             $assetsUrl = Yii::app()->assetManager->publish($assetsPath, false, -1, $this->forceCopyAssets);
             return $this->_assetsUrl = $assetsUrl;
         }
